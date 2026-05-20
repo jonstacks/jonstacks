@@ -1,0 +1,105 @@
+name: Metrics
+
+on:
+  schedule:
+    - cron: "0 13 * * *"
+  workflow_dispatch:
+
+jobs:
+  github-metrics:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Header
+        uses: lowlighter/metrics@366f8b9dfe3a59656c67d5dcad9950f59c9bc96d
+        with:
+          token: ${{ secrets.METRICS_TOKEN }}
+          user: jonstacks
+          filename: header.svg
+          base: header, metadata
+          config_timezone: America/Chicago
+          plugins_errors_fatal: no
+          committer_message: "chore: update metrics [skip ci]"
+
+      - name: Repositories
+        uses: lowlighter/metrics@366f8b9dfe3a59656c67d5dcad9950f59c9bc96d
+        with:
+          token: ${{ secrets.METRICS_TOKEN }}
+          user: jonstacks
+          filename: repositories.svg
+          base: ""
+          plugin_repositories: yes
+          plugin_repositories_pinned: 4
+          plugins_errors_fatal: no
+          committer_message: "chore: update metrics [skip ci]"
+
+      - name: Activity and community
+        uses: lowlighter/metrics@366f8b9dfe3a59656c67d5dcad9950f59c9bc96d
+        with:
+          token: ${{ secrets.METRICS_TOKEN }}
+          user: jonstacks
+          filename: acti_comm.svg
+          base: activity, community
+          config_timezone: America/Chicago
+          plugins_errors_fatal: no
+          committer_message: "chore: update metrics [skip ci]"
+
+      - name: Isometric calendar
+        uses: lowlighter/metrics@366f8b9dfe3a59656c67d5dcad9950f59c9bc96d
+        with:
+          token: ${{ secrets.METRICS_TOKEN }}
+          user: jonstacks
+          filename: iso_calender.svg
+          base: ""
+          plugin_isocalendar: yes
+          plugin_isocalendar_duration: full-year
+          config_timezone: America/Chicago
+          plugins_errors_fatal: no
+          committer_message: "chore: update metrics [skip ci]"
+
+      - name: Issues, PRs, and languages
+        uses: lowlighter/metrics@366f8b9dfe3a59656c67d5dcad9950f59c9bc96d
+        with:
+          token: ${{ secrets.METRICS_TOKEN }}
+          user: jonstacks
+          filename: issue_pr_lang.svg
+          base: ""
+          plugin_followup: yes
+          plugin_followup_sections: user
+          plugin_languages: yes
+          plugin_languages_indepth: yes
+          plugin_languages_details: lines, bytes-size
+          plugin_languages_limit: 8
+          plugin_languages_ignored: >-
+            html, css, tex, less, dockerfile, makefile, qmake, lex, cmake, shell,
+            gnuplot
+          plugins_errors_fatal: no
+          committer_message: "chore: update metrics [skip ci]"
+
+      - name: Habits
+        uses: lowlighter/metrics@366f8b9dfe3a59656c67d5dcad9950f59c9bc96d
+        with:
+          token: ${{ secrets.METRICS_TOKEN }}
+          user: jonstacks
+          filename: github-habits.svg
+          base: ""
+          plugin_habits: yes
+          plugin_habits_facts: yes
+          plugin_habits_charts: yes
+          config_timezone: America/Chicago
+          plugins_errors_fatal: no
+          committer_message: "chore: update metrics [skip ci]"
+
+      - name: Achievements
+        uses: lowlighter/metrics@366f8b9dfe3a59656c67d5dcad9950f59c9bc96d
+        with:
+          token: ${{ secrets.METRICS_TOKEN }}
+          user: jonstacks
+          filename: achievements.svg
+          base: ""
+          plugin_achievements: yes
+          plugin_achievements_display: compact
+          plugins_errors_fatal: no
+          committer_message: "chore: update metrics [skip ci]"

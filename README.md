@@ -1,16 +1,18 @@
-## Hi there 👋
+<p>
+  <img width="49%" src="./header.svg" alt="Profile header metrics" />
+</p>
 
-<!--
-**jonstacks/jonstacks** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+<p>
+  <img width="49%" src="./repositories.svg" alt="Pinned repository metrics" />
+  <img width="49%" src="./acti_comm.svg" alt="Activity and community metrics" />
+</p>
 
-Here are some ideas to get you started:
+<p>
+  <img width="49%" src="./iso_calender.svg" alt="Isometric contribution calendar" />
+  <img width="49%" src="./issue_pr_lang.svg" alt="Issue, pull request, and language metrics" />
+</p>
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+<p>
+  <img width="49%" src="./github-habits.svg" alt="GitHub habits metrics" />
+  <img width="49%" src="./achievements.svg" alt="GitHub achievements metrics" />
+</p>
